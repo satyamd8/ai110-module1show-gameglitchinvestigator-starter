@@ -45,6 +45,8 @@ After each specific bug fix that the Copilot agent did, I ran the streamlit app 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
 - What change did you make that finally gave the game a stable secret number?
 
+The number might have changed because it was being regenerated as the Streamlit app was refreshing. When interacting with certain elements, Streamlit reruns the entire script, which would rerun the function that generates the secret number. This was fixed by using a session state variable to store the number, which only regenerates when starting a new game. 
+
 ---
 
 ## 5. Looking ahead: your developer habits
@@ -53,3 +55,5 @@ After each specific bug fix that the Copilot agent did, I ran the streamlit app 
   - This could be a testing habit, a prompting strategy, or a way you used Git.
 - What is one thing you would do differently next time you work with AI on a coding task?
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+
+One habit/strategy I'd continue to use is the manual testing of certain bugs. Obviously it's hard to do for certain tests, but when minimal, manually testing allows me to see if I'm able to encounter the bug from the perspective of a user, therefore verifying if the bug is truly resolved. One thing I'd do differently is to check the corrected functions more deeply. Going back to the wrong hints bug, if I were to look at the check_guess function a bit more closely, I would have identified the wrong return statements myself rather than having to ask Copilot to check the logic again. My initial thoughts on AI generated code definietely haven't changed, since I've always believed that you have to be a close observer of any generated code due to how often it may mess up.
